@@ -13,7 +13,7 @@ import addressList from "@/components/addressList";
 import trainList from "@/components/trainList";
 import addOrUpdateTrain from "@/components/addOrUpdateTrain";
 import order_frame from "../components/order_frame";
-import Order from "../components/Order";
+import Order from "../components/MyOrder";
 Vue.use(Router)
 
 export default new Router({
