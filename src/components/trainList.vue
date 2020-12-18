@@ -60,7 +60,7 @@
       },
       methods:{
         updateTrain:function (id) {
-          //alert(id)
+          alert(id)
           this.$router.push({name:"addOrUpdateTrain",params:{id:id}})
         },
         handleSizeChange(val) {

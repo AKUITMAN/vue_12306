@@ -83,7 +83,7 @@
       mounted(){
         var id = this.$route.params.id;
         //
-        // alert(id)
+         alert(id)
         if (id!=null){
           this.findById(id)
         }

@@ -39,8 +39,8 @@
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-document"></i>用户管理</template>
             <el-menu-item index="TbUserList">用户信息</el-menu-item>
-            <el-menu-item index="SearchTrainInfo">新增用户</el-menu-item>
-            <el-menu-item index="TrainSchedule">修改用户信息</el-menu-item>
+           <!-- <el-menu-item index="SearchTrainInfo">新增用户</el-menu-item>
+            <el-menu-item index="TrainSchedule">修改用户信息</el-menu-item>-->
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-plus"></i>列车管理</template>
@@ -54,13 +54,13 @@
           </el-submenu>
           <el-submenu index="4">
             <template slot="title"><i class="el-icon-star-on"></i>乘客管理</template>
-            <el-menu-item index="AllOrderList">全部乘客</el-menu-item>
+            <el-menu-item index="AllPeopleList">全部乘客</el-menu-item>
           </el-submenu>
 
           <el-submenu index="5">
             <template slot="title"><i class="el-icon-user-solid"></i>城市管理</template>
             <el-menu-item index="addressList">全部城市</el-menu-item>
-            <el-menu-item index="ChangeUserInfo">新增城市</el-menu-item>
+            <el-menu-item index="addAddress">新增城市</el-menu-item>
           </el-submenu>
 
         </el-menu>

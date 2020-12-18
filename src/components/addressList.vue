@@ -1,21 +1,25 @@
 <template>
   <div class="echarts">
-    <div :style="{height:'400px',width:'100%'}" ref="myEchart"></div>
+    <h1>这是12306城市分布</h1>
+    <div :style="{height:'600px',width:'100%'}" ref="myEchart"></div>
   </div>
 </template>
 
 <script>
+  import axios from 'axios';
   import echarts from "echarts";
   import '../../node_modules/echarts/map/js/china.js' // 引入中国地图数据
     export default {
-        name: "addressList",
+      name: "addressList",
       rops: ["userJson"],
       data() {
         return {
-          chart: null
+          chart: null,
+          addressList:[]
         };
       },
       mounted() {
+        this.findAll();
         this.chinaConfigure();
       },
       beforeDestroy() {
@@ -26,6 +30,20 @@
         this.chart = null;
       },
       methods: {
+        findAll:function(){
+          axios.get("/api/address/findMap").then(res=>{
+            if (res.data.code==200){
+              this.addressList=res.data.data;
+              this.chinaConfigure();
+              //alert(this.series.data),
+              //alert(res.data.data)
+              console.log(res.data);
+            }else if (res.data.code==300){
+              alert("对不起，您权限不够")
+            }
+          })
+        },
+
         chinaConfigure() {
           console.log(this.userJson)
           let myChart = echarts.init(this.$refs.myEchart); //这里是为了获得容器所在位置
@@ -72,33 +90,15 @@
               coordinateSystem: 'geo' // 对应上方配置
             },
               {
-                name: '启动次数', // 浮动框的标题
+                name: '旅客访问数量（/万）', // 浮动框的标题
                 type: 'map',
                 geoIndex: 0,
-                data: [{
-                  "name": "北京",
-                  "value": 5599
-                }, {
-                  "name": "上海",
-                  "value": 5142
-                }, {
-                  "name": "黑龙江",
-                  "value": 100
-                }, {
-                  "name": "深圳",
-                  "value": 9992
-                }, {
-                  "name": "湖北",
-                  "value": 810
-                }, {
-                  "name": "四川",
-                  "value": 9000
-                }]
+                data: this.addressList
               }
             ]
           })
         }
-      }
+      },
     }
 </script>
 

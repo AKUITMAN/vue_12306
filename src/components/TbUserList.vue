@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="lay1">
   <el-table
     :data="userList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
     style="width: 100%">
@@ -23,7 +23,6 @@
           placeholder="输入关键字搜索"/>
       </template>
       <template slot-scope="scope">
-        <el-button @click="updateTrain(scope.row.id)" type="text" size="small">编辑</el-button>
         <el-button @click="handleDelete(scope.row.id)"  type="text" size="small">删除</el-button>
       </template>
     </el-table-column>
@@ -55,21 +54,25 @@
           axios.post("/api/user/deleteByuserName",{id:id}).then(res=>{
             if (res.data.code==200){
               this.findAll();
+            }else if (res.data.code==300){
+              alert("对不起，您权限不够");
             }
           })
         },
-        updateTrain:function (id) {
-          alert(id)
-          this.$router.push({name:'addOrUpdateTrain',params:{id:id}})
-        },
-
       },
       mounted() {
-        this.findAll();
+          this.findAll();
+          if (this.userList==null){
+            this.$router.push("/adminlogin")
+          }
+
       }
     }
 </script>
 
 <style scoped>
+  .lay1{
+    background-image: url("../assets/bj.jpg");
+  }
 
 </style>

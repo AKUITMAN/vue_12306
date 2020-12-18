@@ -12,6 +12,8 @@ import TbUserList from "@/components/TbUserList";
 import addressList from "@/components/addressList";
 import trainList from "@/components/trainList";
 import addOrUpdateTrain from "@/components/addOrUpdateTrain";
+import AllPeopleList from "@/components/AllPeopleList";
+import addAddress from "@/components/addAddress";
 Vue.use(Router)
 
 export default new Router({
@@ -70,6 +72,18 @@ export default new Router({
           name:'addOrUpdateTrain',
           component: addOrUpdateTrain,
           meta: ['列车管理', '新增列车'],
+        },
+        {
+          path: '/AllPeopleList',
+          name:'AllPeopleList',
+          component: AllPeopleList,
+          meta: ['乘客管理', '全部乘客'],
+        },
+        {
+          path: '/addAddress',
+          name:'addAddress',
+          component: addAddress,
+          meta: ['城市管理', '新增城市'],
         },
       ]
     }

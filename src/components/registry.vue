@@ -60,7 +60,7 @@
       <div style="position: absolute;left: 260px;top: 180px;">
       <h5>您现在的位置：客运首页  > 注册</h5>
       </div>
-      <div style="margin: auto; height: 500px;width: 1000px;border: solid 1px darkolivegreen;">
+      <div style="margin: auto; height: 600px;width: 1000px;border: solid 1px darkolivegreen;">
         <div class="kk">
           <div style="position: absolute;left: 10px">
           账户信息
@@ -79,14 +79,14 @@
             </el-form-item>
             <el-form-item label="性别:">
               <el-select v-model="user.gender" placeholder="请选择性别">
-                <el-option label="男" value="0"></el-option>
-                <el-option label="女" value="1"></el-option>
+                <el-option label="男" value="1"></el-option>
+                <el-option label="女" value="0"></el-option>
               </el-select>
             </el-form-item>
             <el-form-item label="旅客类型:">
             <el-select v-model="user.level" placeholder="请选择旅客类型">
-              <el-option label="成人" value="0"></el-option>
-              <el-option label="学生" value="1"></el-option>
+              <el-option label="成人" value="1"></el-option>
+              <el-option label="学生" value="0"></el-option>
             </el-select>
             </el-form-item>
             <el-form-item label="电子邮箱:">
