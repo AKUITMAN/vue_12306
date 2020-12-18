@@ -12,6 +12,8 @@ import TbUserList from "@/components/TbUserList";
 import addressList from "@/components/addressList";
 import trainList from "@/components/trainList";
 import addOrUpdateTrain from "@/components/addOrUpdateTrain";
+import order_frame from "../components/order_frame";
+import Order from "../components/Order";
 Vue.use(Router)
 
 export default new Router({
@@ -71,6 +73,17 @@ export default new Router({
           component: addOrUpdateTrain,
           meta: ['列车管理', '新增列车'],
         },
+      ]
+    },
+    {
+      path: '/order',
+      component: order_frame,
+      redirect: '/order_frame',
+      children: [
+        {
+          path: '/order_frame',
+          component: Order
+        }
       ]
     }
   ]
