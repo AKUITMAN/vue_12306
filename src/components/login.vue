@@ -119,6 +119,7 @@
           axios.post("/api/user/login",this.user).then(res=>{
             if (res.data.code==200){
               alert(res.data.message);
+              this.$cookie.set("token",this.user);
               //this.$router.push("/login")
             }else{
               alert(res.data.message)
