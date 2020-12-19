@@ -11,22 +11,12 @@
         @select="handleSelect"
         background-color="#545c64"
         text-color="#fff"
-        active-text-color="#ffd04b" style="margin-left: 300px">
-        <el-menu-item index="1">处理中心</el-menu-item>
-        <el-submenu index="2">
-          <template slot="title">我的工作台</template>
-          <el-menu-item index="2-1">选项1</el-menu-item>
-          <el-menu-item index="2-2">选项2</el-menu-item>
-          <el-menu-item index="2-3">选项3</el-menu-item>
-          <el-submenu index="2-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="2-4-1">选项1</el-menu-item>
-            <el-menu-item index="2-4-2">选项2</el-menu-item>
-            <el-menu-item index="2-4-3">选项3</el-menu-item>
-          </el-submenu>
-        </el-submenu>
-        <el-menu-item index="3" disabled>消息中心</el-menu-item>
-        <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+        active-text-color="#ffd04b" style="margin-left: 1100px">
+        <el-menu-item index="1">当前登录的管理员为:</el-menu-item>
+        <el-menu-item index="3">{{nowName}}
+        </el-menu-item>
+        <div style="position: absolute;margin-top: 8px;margin-left: 230px">
+          <el-button @click="zhuxiao" type="text"><h3>注销</h3></el-button></div>
       </el-menu>
     </div>
     <div style="">
@@ -79,6 +69,11 @@
 
 <script>
     export default {
+      data() {
+        return {
+          nowName:'',
+        }
+      },
       computed: {
         defaultActive: function(){
           return this.$route.path.replace('/','')
@@ -87,8 +82,19 @@
       methods: {
         handleSelect(key, keyPath) {
           console.log(key, keyPath);
+        },
+        zhuxiao:function () {
+          this.$cookie.set("guan",null);
+          this.$router.push("/adminlogin");
         }
       },
+      mounted() {
+        this.nowName=this.$cookie.get("guan");
+        //alert(this.nowName);
+        if (this.nowName==null){
+          this.$router.push("/adminlogin");
+        }
+      }
     }
 </script>
 

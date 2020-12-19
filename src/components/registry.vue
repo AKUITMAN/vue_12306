@@ -49,7 +49,9 @@
               </li>
             </ul>
           </li>
-          <li id="user"><a>登录</a><a>注册</a></li>
+          <div style="position:absolute; margin-top: -10px;margin-left: 250px">
+          <li id="user"><el-button type="text"  @click="login" plain>登录</el-button>
+            <el-button type="text" plain>注册</el-button> </li></div>
         </ul>
       </div>
     </div>
@@ -175,6 +177,12 @@
       };
     },
     methods: {
+      login:function () {
+        this.$router.push("/")
+      },
+      sign:function () {
+        this.$router.push("/registry")
+      },
       sendMail:function () {
         axios.post("/api/user/sendMail",{email:this.user.email}).then(res=>{
           if (res.data.code==200){
@@ -261,7 +269,7 @@
     border: 0px;
   }
   .box-ul {
-    width: 310px;
+    width: 335px;
     height: 40px;
     background: #f8f8f8;
     float: left;

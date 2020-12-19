@@ -31,6 +31,7 @@
             axios.post("/api/tbuser/login",this.tbuser).then(res=>{
               if (res.data.code==200){
                 alert(res.data.message);
+                this.$cookie.set("guan",this.tbuser.userName);
                 this.$router.push("/manage")
               }else{
                 alert(res.data.message)
