@@ -50,7 +50,7 @@
 
           <el-submenu index="4">
             <template slot="title"><i class="el-icon-star-on"></i>订单管理</template>
-            <el-menu-item index="AllOrderList">全部订单</el-menu-item>
+            <el-menu-item index="OrderList">全部订单</el-menu-item>
           </el-submenu>
           <el-submenu index="4">
             <template slot="title"><i class="el-icon-star-on"></i>乘客管理</template>

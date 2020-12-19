@@ -4,7 +4,6 @@ import Router from 'vue-router'
 import login from '@/components/login'
 import registry from "@/components/registry";
 import forgetPassword from "@/components/forgetPassword";
-import Lunbotu from "@/components/Lunbotu";
 import adminlogin from "@/components/adminlogin";
 import Manage from "@/components/Manage";
 import Home from "@/components/Home";
@@ -14,16 +13,12 @@ import trainList from "@/components/trainList";
 import addOrUpdateTrain from "@/components/addOrUpdateTrain";
 import AllPeopleList from "@/components/AllPeopleList";
 import addAddress from "@/components/addAddress";
+import OrderList from "@/components/OrderList";
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'login',
-      component: login
-    },{
-      path: '/login',
       name: 'login',
       component: login
     },{
@@ -35,10 +30,6 @@ export default new Router({
       name: 'forgetPassword',
       component: forgetPassword
     },{
-      path: '/Lunbotu',
-      name: 'Lunbotu',
-      component: Lunbotu
-    }, {
       path: '/adminlogin',
       name: 'adminlogin',
       component: adminlogin
@@ -85,7 +76,13 @@ export default new Router({
           component: addAddress,
           meta: ['城市管理', '新增城市'],
         },
+        {
+          path: '/OrderList',
+          name:'OrderList',
+          component: OrderList,
+          meta: ['订单管理', '全部订单'],
+        },
       ]
-    }
+    },
   ]
 })

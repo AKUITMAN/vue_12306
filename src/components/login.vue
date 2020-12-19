@@ -14,8 +14,8 @@
             </el-carousel-item>
           </el-carousel>
         </el-main>
-        <div class="lay3" style="width: 400px;height: 480px; position: absolute;right:100px;top: 150px;z-index:999;opacity: 0.9">
-          <h2>登&nbsp&nbsp录</h2>
+        <div class="lay3" style="width: 400px;height: 400px; position: absolute;right:100px;top: 150px;z-index:999;opacity: 0.9">
+          <div style="margin-left: 180px"><h2>登&nbsp&nbsp录</h2></div>
           <el-form  label-width="80px" :model="user">
           <el-form-item label="用户名">
             <el-input v-model="user.userName"></el-input>
@@ -27,12 +27,15 @@
             <el-input v-model="user.idCard"></el-input>
           </el-form-item>
           <el-row>
+            <div style="margin-left: 180px">
             <el-button type="success" @click="login" plain>登录</el-button>
+            </div>
           </el-row>
         </el-form>
           <hr>
+          <div style="margin-left: 100px">
           <h4>还没有账号，<el-button type="text"  @click="registry" plain>立即注册</el-button>|
-            <el-button type="text" @click="forgetPassword"> 忘记密码</el-button></h4>
+            <el-button type="text" @click="forgetPassword"> 忘记密码</el-button></h4></div>
           <hr>
           <h5>
             1、12306.cn网站每日06:00~23:30提供服务。<br>
