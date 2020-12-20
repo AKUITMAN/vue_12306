@@ -53,61 +53,6 @@
         </ul>
       </div>
     </div>
-
-
-    <!--头部导航栏-->
-    <div class="line" style="background-color:#3B99FC">
-      <el-menu
-        :default-active="activeIndex2"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="#3B99FC"
-        text-color="#fff"
-        active-text-color="#f6f93b"
-        style="margin-left: 270px">
-        <el-menu-item index="0">首页</el-menu-item>
-        <el-submenu index="2">
-          <template slot="title">车票</template>
-          <el-menu-item index="2-1-1">单程</el-menu-item>
-          <el-menu-item index="2-2-2">往返</el-menu-item>
-          <el-menu-item index="2-3-3">退票</el-menu-item>
-          <el-menu-item index="2-4-4">改签</el-menu-item>
-        </el-submenu>
-        <el-submenu index="3">
-          <template slot="title">团购服务</template>
-          <el-menu-item index="3-1-1">务工人员</el-menu-item>
-          <el-menu-item index="3-2-2">学生团体</el-menu-item>
-        </el-submenu>
-        <!--          <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>-->
-        <el-submenu index="4">
-          <template slot="title">会员服务</template>
-          <el-menu-item index="4-1-1">会员管理</el-menu-item>
-          <el-menu-item index="4-2-2">会员中心</el-menu-item>
-        </el-submenu>
-        <el-submenu index="5">
-          <template slot="title">站车服务</template>
-          <el-menu-item index="5-1-1">重点旅客预约</el-menu-item>
-          <el-menu-item index="5-2-2">遗失物品查找</el-menu-item>
-        </el-submenu>
-        <el-submenu index="6">
-          <template slot="title">商旅服务</template>
-          <el-menu-item index="6-1-1">旅游</el-menu-item>
-          <el-menu-item index="6-2-2">餐饮</el-menu-item>
-        </el-submenu>
-        <el-submenu index="7">
-          <template slot="title">出行指南</template>
-          <el-menu-item index="7-1-2">车票</el-menu-item>
-          <el-menu-item index="7-2-2">改签</el-menu-item>
-        </el-submenu>
-        <el-submenu index="8">
-          <template slot="title">信息查询</template>
-          <el-menu-item index="8-1-2">正晚点</el-menu-item>
-          <el-menu-item index="8-2-2">时刻表</el-menu-item>
-        </el-submenu>
-      </el-menu>
-    </div>
-
     <div class="center">
       <div class="layout">
         <div class="abc">
@@ -115,15 +60,15 @@
           列车信息<span class="small">（以下余票信息仅供参考）</span>
         </div>
           <div class="clift">
-            <strong class="stll">{{$route.params.v3}}</strong>  &nbsp;&nbsp;&nbsp;
-            <strong class="stll">{{$route.params.tr}}</strong>次
-            <strong class="stll">{{$route.params.addfrom}}</strong>站
-            <strong class="stll">({{$route.params.ftime}}开)-{{$route.params.ato}}</strong>站（{{$route.params.ttime}}）到
+            <strong class="stll">2020-12-19(周六)</strong>
+            <strong class="stll">Z21</strong>次
+            <strong class="stll">北京</strong>站
+            <strong class="stll">(20:00开)-西宁</strong>站（14：00）到
           </div>
           <div class="price">
-            站票<strong class="price1">(￥{{tickett[0].price}})</strong>{{$route.params.nseat}}张票&nbsp&nbsp&nbsp
-            硬座<strong class="price1">(￥{{tickett[1].price}})</strong>{{$route.params.hseat}}张票&nbsp&nbsp&nbsp
-            卧铺<strong class="price1">(￥{{tickett[2].price}})</strong>{{$route.params.sleep}}张票
+          硬座<strong class="price1">(1000.00)</strong>有票&nbsp&nbsp&nbsp
+          站票<strong class="price1">(1000.00)</strong>有票&nbsp&nbsp&nbsp
+          卧铺<strong class="price1">(1000.00)</strong>有票
           </div>
           <div class="shuoming">
             *显示的卧铺票价均为上铺票价，供您参考。具体票价以您确认支付时实际购买的铺别票价为准。
@@ -145,7 +90,6 @@
                 <el-checkbox v-model="checked">备选项</el-checkbox>
                 <el-checkbox v-model="checked">备选项</el-checkbox>
               </template>
-
             </div>
           </div>
           <div>
@@ -162,40 +106,29 @@
                   prop="idType"
                   label="票种"
                   width="150">
-                <select id="piaoazhong">
-                  <option value="1">成人票</option>
-                  <option value="2">学生票</option>
-                  <option value="3">儿童票</option>
-                  <option value="4">残军票</option>
-                </select>
                 </el-table-column>
 
                 <el-table-column
                   prop="type"
                   label="席别"
                   width="150">
-                  <select id="xibie">
-                    <option value="1">硬座(￥{{tickett[0].price}})</option>
-                    <option value="2">无座(￥{{tickett[1].price}})</option>
-                    <option value="3">卧铺(￥{{tickett[2].price}})</option>
-                  </select>
                 </el-table-column>
                 <el-table-column
-                  prop="riderName"
+                  prop="userName"
                   label="姓名"
                   width="150">
                 </el-table-column>
                 <el-table-column
                   prop="cardType"
                   label="证件类型"
-                  width="100">
+                  width="150">
                 </el-table-column>
                 <el-table-column
                   prop="idCard"
                   label="证件号码"
-                  width="200">
+                  width="150">
                 </el-table-column> <el-table-column
-                prop="cell"
+                prop="number"
                 label="手机号码"
                 width="150">
               </el-table-column>
@@ -206,132 +139,45 @@
           <img  class="img" src="../assets/12306img/ins_ad6.png">
           <!--<img class="img" src="http://qlbh2fksn.hn-bkt.clouddn.com/ins_ad6.png">-->
         </div>
-        <div class="bttt-sub">
-          <el-button type="info" plain>上一步</el-button>
-          <el-button type="warning">提交</el-button>
-        </div>
       </div>
     </div>
-
-    <!-- 首页尾部 -->
-    <div class="qianfeng">
-      <div class="box-d">
-        <div class="qian-a">
-          <h2>友情链接</h2>
-          <ul>
-            <li><a href=""><img src="../assets/12306img/link02.png"></a></li>
-            <li><a href=""><img src="../assets/12306img/link03.png"></a></li>
-            <li><a href=""><img src="../assets/12306img/link04.png"></a></li>
-            <li><a href=""><img src="../assets/12306img/link05.png"></a></li>
-          </ul>
-        </div>
-        <ul class="xian">
-          <li>
-            <h2>中国铁路官方微信</h2>
-            <div class="dimg">
-              <img src="../assets/12306img/zgtlwx.png">
-            </div>
-          </li>
-          <li>
-            <h2>中国铁路官方微博</h2>
-            <div class="dimg">
-              <img src="../assets/12306img/zgtlwb.png">
-            </div>
-          </li>
-          <li>
-            <h2>12306 公众号</h2>
-            <div class="dimg">
-              <img src="../assets/12306img/public.png">
-            </div>
-          </li>
-          <li>
-            <h2>铁路12306</h2>
-            <div class="dimg">
-              <img src="../assets/12306img/download.png">
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 底部 -->
-      <div class="box-b">
-        <p>
-          <span class="mr">版权所有©2008-2020</span>
-          <span>中国铁道科学研究院集团有限公司 </span>
-        </p>
-        <p>
-          <span class="mr">京ICP备05020493号-4</span>
-          <span class="mr">|</span>
-          <span>ICP证：京B2-20202537</span>
-        </p>
-      </div>
-      <!--        <div class="box-c"
-                   @click="liteng">
-                <span class="iconfont icon-xiangshangjiantou"></span>
-              </div>-->
-    </div>
-
   </div>
 </template>
-
 <script>
-  import axios from 'axios'
     /*export default {
         name: "passenger",
     }*/
     export default {
       data() {
         return {
-          value2:'',
-          tableData: [],
-          currentRow: null,
-          tickett:[],
-          userId:'1'
+          tableData: [{
+            idType: '成人票',
+            userName: '王小虎',
+            type: '硬卧',
+            cardType: '中国居民身份证',
+            idCard: '610122**********32',
+            number: '187*****852'
+          },
+            {
+              idType: '成人票',
+              userName: '王小虎',
+              type: '硬卧',
+              cardType: '中国居民身份证',
+              idCard: '610122**********32',
+              number: '187*****852'
+            }],
+          currentRow: null
         }
       },
 
-      methods: {
-        // setCurrent(row) {
-        //   this.$refs.singleTable.setCurrentRow(row);
-        // },
-        // handleCurrentChange(val) {
-        //   this.currentRow = val;
-        // }
-
-        // ss(){
-        //   alert(this.value3)
-        //   alert(this.row.trainName);
-        // }
-        ddan(){
-
-          axios.get("api/price/findPrice/"+this.$route.params.trId).then(res =>{
-            if (res.data.code == 200) {
-
-              this.tickett=res.data.data;
-
-            }
-          });
-
+      /*methods: {
+        setCurrent(row) {
+          this.$refs.singleTable.setCurrentRow(row);
         },
-
-        chengke(){
-          axios.get("api/rider/findUid/"+this.userId).then(res=>{
-            if (res.data.code == 200) {
-
-              this.tableData=res.data.data;
-            }
-          })
-
+        handleCurrentChange(val) {
+          this.currentRow = val;
         }
-
-      },
-        mounted(){
-          // alert(this.$route.params.trId)
-          this.ddan();
-          this.chengke();
-        }
-
-
+      }*/
     }
 </script>
 
@@ -430,10 +276,10 @@
     font-size: 16px;
   }
   .clift{
-    margin-left: 40px;
+    margin-left: -400px;
   }
   .price{
-    margin-left: 40px;
+    margin-left: -400px;
     margin-top: 20px;
   }
   .price1{
@@ -441,14 +287,13 @@
   }
   .shuoming{
     margin-top: 20px;
-    margin-left: 45px;
+    margin-left: -450px;
     color: #1678be;
     font-size: 10px;
   }
   .bxk{
-    margin-left: 750px;
-    margin-top: 2px;
-    margin-bottom: 20px;
+    margin-left: 400px;
+    margin-top: 10px;
   }
   @import url("../assets/font/iconfont.css");
   .box {
@@ -682,141 +527,5 @@
     font-size: 14px;
   }
 
-  .line {
-    margin-top: 15px;
-    margin-bottom: 8px;
 
-  }
-
-
-  .qianfeng {
-    width: 1200px;
-    height: 280px;
-    background-color: #f8f8f8;
-    margin: 0 auto;
-    margin-top: 400px;
-
-  }
-
-  .box-d {
-    padding: 10px 0;
-    width: 1200px;
-    /* padding: 0 5px; */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -445px;
-    background: #fff;
-  }
-
-  .qian-a {
-    margin-right: 20px;
-    float: left;
-    width: 420px;
-    margin-left: 60px;
-    /* margin-right: 195px; */
-  }
-
-  .qian-a h2 {
-    height: 54px;
-    line-height: 54px;
-    font-size: 14px;
-  }
-
-  .qian-a ul {
-    height: 100px;
-  }
-
-  .qian-a ul li {
-    float: left;
-    margin: 0 10px 10px 0;
-  }
-
-  .qian-a ul li a img {
-    display: block;
-    width: 198px;
-    height: 34px;
-    border: 1px solid #dedede;
-  }
-
-  .xian {
-    float: left;
-  }
-
-  .xian li {
-    float: left;
-    width: 140px;
-    text-align: center;
-  }
-
-  .xian li h2 {
-    height: 54px;
-    line-height: 54px;
-    font-size: 14px;
-  }
-
-  .xian .dimg {
-    width: 80px;
-    height: 80px;
-    background: #fff;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .xian .dimg img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    border: 1px solid #dedede;
-  }
-
-  /* 底部 */
-
-  .box-b {
-    margin-top: 160px;
-    width: 1200px;
-    height: 80px;
-    text-align: center;
-    padding: 10px 0;
-    background: #666;
-    color: #c1c1c1;
-  }
-
-  .box-b p {
-    line-height: 40px;
-  }
-
-  .box-b p span {
-    font-size: 15px;
-    color: #999;
-    margin-left: 10px;
-  }
-
-  /* 返回顶端 */
-
-  .box-c {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 60px;
-    height: 60px;
-    background: #f8f8f8;
-    text-align: center;
-    line-height: 60px;
-    cursor: pointer;
-  }
-
-  .box-c span {
-    font-size: 35px;
-  }
-
-  .bttt-sub{
-    width: 400px;
-    margin-top: 340px;
-    margin-left: 300px;
-  }
-  .bttt-sub button{
-    width: 170px;
-    height: 40px;
-
-  }
 </style>

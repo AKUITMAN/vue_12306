@@ -14,13 +14,22 @@ import AllPeopleList from "@/components/AllPeopleList";
 import addAddress from "@/components/addAddress";
 import OrderList from "@/components/OrderList";
 import order_frame from "@/components/order_frame";
-import Order from "@/components/MyOrder";
-// import travel from "@/components/travel";
-// import passenger from "../components/passenger";
+// import MyOrder from "@/components/MyOrder";
+import passenger from '@/components/passenger'
+import personal from "@/components/personal";
+import account from "@/components/account";
+import password from "@/components/password";
+import rider from "@/components/rider";
+import addRider from "@/components/addRider";
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/passenger',
+      name: 'passenger',
+      component: passenger
+    },
     {
       path: '/',
       name: 'login',
@@ -89,13 +98,33 @@ export default new Router({
       ]
     },
     {
-      path: '/order',
+      path: '/only',
+      name: 'only',
       component: order_frame,
-      redirect: '/order_frame',
       children: [
         {
-          path: '/order_frame',
-          component: Order
+          path: '/rider',
+          component: rider,
+          /* meta:['常用信息管理','乘车人'],*/
+        },
+        {
+          path: '/addRider',
+          name: 'addRider',
+          component: addRider
+        },
+        {
+          path: '/personal',
+          name: 'personal',
+          component: personal
+        },
+        {
+          path: '/account',
+          name: 'account',
+          component: account
+        },{
+          path: '/password',
+          name: 'password',
+          component: password
         }
       ]
     }

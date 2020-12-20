@@ -86,8 +86,22 @@ export default {
         if (res.data.code == 200) {
         }
       })
+    },
+    login(){
+      var token=this.$cookie.get("token");
+      if (token==null || token==""){
+        this.$message({
+          type:'success',
+          message:'请登录'
+        });
+        this.$router.push("/");
+      }
     }
+  },
+  mounted() {
+    this.login();
   }
+
 }
 </script>
 

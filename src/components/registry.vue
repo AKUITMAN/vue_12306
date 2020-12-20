@@ -186,18 +186,34 @@
       sendMail:function () {
         axios.post("/api/user/sendMail",{email:this.user.email}).then(res=>{
           if (res.data.code==200){
-            alert(res.data.message)
+            // alert(res.data.message)
+            this.$message({
+              type:'success',
+              message:res.data.message
+            })
           }else{
-            alert(res.data.message)
+            // alert(res.data.message)
+            this.$message({
+              type:'danger',
+              message:res.data.message
+            })
           }
         })
       },
       registry:function () {
-        axios.post("/api/user/registry",this.user).then(res=>{
+        axios.post("api/user/registry",this.user).then(res=>{
           if (res.data.code==200){
+            this.$message({
+              type:'success',
+              message:'注册成功'
+            })
             this.$router.push("/")
           }else{
-            alert(res.data.message)
+            // alert(res.data.message)
+            this.$message({
+              type:'danger',
+              message:res.data.message
+            })
           }
         })
       }

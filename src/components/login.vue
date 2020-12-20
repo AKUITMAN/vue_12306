@@ -116,13 +116,20 @@
       },
       methods: {
         login:function () {
-          axios.post("/api/user/login",this.user).then(res=>{
+          axios.post("api/user/login",this.user).then(res=>{
             if (res.data.code==200){
-              alert(res.data.message);
-              this.$cookie.set("token",this.user);
+              // alert(res.data.message);
+              this.$message({
+                type:'success',
+                message:res.data.message
+              });
+              this.$cookie.set("token",res.data.data);
               //this.$router.push("/login")
             }else{
-              alert(res.data.message)
+              this.$message({
+                type:'danger',
+                message:res.data.message
+              });
             }
           })
         },

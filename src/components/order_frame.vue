@@ -173,67 +173,76 @@
           -->
           <el-container style="height: 100%;">
 
-            <el-col :span="6">
-              <el-menu
-                default-active="2"
-                class="el-menu-vertical-demo"
-                @open="handleOpen"
-                @close="handleClose"
-                @select="handleSelect">
-                <el-submenu index="1">
-                  <template slot="title">
-                    <i class="el-icon-message"></i>订单中心
-                  </template>
-                  <el-menu-item-group>
-                    <el-menu-item index="1-1">火车票订单</el-menu-item>
-                    <el-menu-item index="1-2">候补订单</el-menu-item>
-                    <el-menu-item index="1-3">餐饮<i class="el-icon-minus"></i>特产</el-menu-item>
-                    <el-menu-item index="1-4">保险订单</el-menu-item>
-                  </el-menu-item-group>
-                </el-submenu>
-                <el-menu-item index="2-1">本人车票</el-menu-item>
-                <el-menu-item index="2-2">会员中心</el-menu-item>
-                <el-submenu index="3">
-                  <template slot="title">
-                    <i class="el-icon-setting"></i>个人信息
-                  </template>
-                  <el-menu-item-group>
-                    <el-menu-item index="3-1">查看个人信息</el-menu-item>
-                    <el-menu-item index="3-2">账号安全</el-menu-item>
-                    <el-menu-item index="3-3">手机核验</el-menu-item>
-                    <el-menu-item index="3-4">账号注销</el-menu-item>
-                  </el-menu-item-group>
-                </el-submenu>
-                <el-submenu index="4">
-                  <template slot="title">
-                    <i class="el-icon-setting"></i>常用信息管理
-                  </template>
-                  <el-menu-item-group>
-                    <el-menu-item index="4-1">乘车人</el-menu-item>
-                    <el-menu-item index="4-2">地址管理</el-menu-item>
-                  </el-menu-item-group>
-                </el-submenu>
-                <el-submenu index="5">
-                  <template slot="title">
-                    <i class="el-icon-setting"></i>温馨服务
-                  </template>
-                  <el-menu-item-group>
-                    <el-menu-item index="5-1">重点旅客预约</el-menu-item>
-                    <el-menu-item index="5-2">遗失物品查找</el-menu-item>
-                    <el-menu-item index="5-3">服务查询</el-menu-item>
-                  </el-menu-item-group>
-                </el-submenu>
-                <el-submenu index="6">
-                  <template slot="title">
-                    <i class="el-icon-setting"></i>投诉和建议
-                  </template>
-                  <el-menu-item-group>
-                    <el-menu-item index="6-1">投诉</el-menu-item>
-                    <el-menu-item index="6-2">建议</el-menu-item>
-                  </el-menu-item-group>
-                </el-submenu>
-              </el-menu>
-            </el-col>
+          <el-col :span="6">
+            <el-menu
+              default-active="activeIndex3"
+              class="el-menu-vertical-demo"
+              @open="handleOpen"
+              @close="handleClose"
+              @select="handleSelect">
+              <el-submenu index="1">
+                <template slot="title">
+                  <i class="el-icon-message"></i>订单中心
+                </template>
+                <el-menu-item-group>
+                  <el-menu-item index="1-1">火车票订单</el-menu-item>
+                  <el-menu-item index="1-2">候补订单</el-menu-item>
+                  <el-menu-item index="1-3">餐饮<i class="el-icon-minus"></i>特产</el-menu-item>
+                  <el-menu-item index="1-4">保险订单</el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-menu-item index="2-1">本人车票</el-menu-item>
+              <el-menu-item index="2-2">会员中心</el-menu-item>
+              <el-submenu index="3">
+                <template slot="title">
+                  <i class="el-icon-setting"></i>个人信息
+                </template>
+                <el-menu-item-group>
+                  <el-submenu index="personal">
+                    <template slot="title">查看个人信息
+                    </template>
+                  </el-submenu>
+                  <el-submenu index="account">
+                    <template slot="title">账号安全
+                    </template>
+                  </el-submenu>
+                  <el-menu-item index="3-3">手机核验</el-menu-item>
+                  <el-menu-item index="3-4">账号注销</el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="4">
+                <template slot="title">
+                  <i class="el-icon-setting"></i>常用信息管理
+                </template>
+                <el-menu-item-group>
+                  <el-submenu index="rider">
+                    <template slot="title">乘车人
+                    </template>
+                  </el-submenu>
+                  <el-menu-item index="4-2">地址管理</el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="5">
+                <template slot="title">
+                  <i class="el-icon-setting"></i>温馨服务
+                </template>
+                <el-menu-item-group>
+                  <el-menu-item index="5-1">重点旅客预约</el-menu-item>
+                  <el-menu-item index="5-2">遗失物品查找</el-menu-item>
+                  <el-menu-item index="5-3">服务查询</el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="6">
+                <template slot="title">
+                  <i class="el-icon-setting"></i>投诉和建议
+                </template>
+                <el-menu-item-group>
+                  <el-menu-item index="6-1">投诉</el-menu-item>
+                  <el-menu-item index="6-2">建议</el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+            </el-menu>
+          </el-col>
             <el-container>
               <router-view/>
             </el-container>
@@ -293,10 +302,10 @@
             <span>ICP证：京B2-20202537</span>
           </p>
         </div>
-        <!--        <div class="box-c"
-                     @click="liteng">
-                  <span class="iconfont icon-xiangshangjiantou"></span>
-                </div>-->
+<!--        <div class="box-c"
+             @click="liteng">
+          <span class="iconfont icon-xiangshangjiantou"></span>
+        </div>-->
       </div>
 
     </div>
@@ -314,7 +323,8 @@ export default {
     return {
       tableData: Array(20).fill(item),
       activeIndex: '1',
-      activeIndex2: '1'
+      activeIndex2:'1',
+      activeIndex3:'1'
     };
   },
   methods: {
@@ -325,7 +335,20 @@ export default {
       });
     },
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      console.log( keyPath);
+      if (keyPath[1]=="rider"){
+        this.$router.push("/rider")
+      }
+      if (keyPath[1]=="personal"){
+        this.$router.push("/personal")
+      }
+      if (keyPath[1]=="account"){
+        this.$router.push("/account")
+      }
+      if (keyPath[1]=="password"){
+        this.$router.push("/password")
+      }
+
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
@@ -337,38 +360,46 @@ export default {
 
 <style>
 @import url("../assets/font/iconfont.css");
+
 .line {
   margin-top: -37px;
   margin-bottom: 8px;
+
 }
+
 .box {
   width: 100%;
   height: 120px;
   background: #fff;
   z-index: 200;
 }
+
 .box-a {
   width: 1200px;
   height: 0px;
   margin: 0 auto;
   background: #fff;
 }
+
 .box-a-1 {
   float: left;
   margin: 15px 0 0 0;
   padding: 0;
 }
+
 .box-a-1 img {
   display: block;
   width: 200px;
   height: 50px;
   cursor: pointer;
 }
+
 .box-quan {
   width: 900px;
   height: 40px;
   float: right;
 }
+
 .box-ipt {
   width: 523px;
   height: 40px;
@@ -377,6 +408,7 @@ export default {
   margin: 15px 0 0 0;
   line-height: 20px;
 }
+
 .box-ipt input {
   width: 420px;
   height: 25px;
@@ -385,6 +417,8 @@ export default {
   outline: none;
   margin-top: 5px;
 }
+
+
 .box-ul {
   width: 310px;
   height: 40px;
@@ -395,6 +429,7 @@ export default {
   position: relative;
   margin-left: 27px;
 }
+
 .box-ul li {
   float: left;
   line-height: 25px;
@@ -404,6 +439,7 @@ export default {
   font-size: 12px;
   margin-top: 10px;
 }
+
 .box-ul li .caret {
   margin-left: 5px;
   display: inline-block;
@@ -419,14 +455,18 @@ export default {
   border-bottom: none;
   margin-right: 10px;
 }
+
 .box-ul .eng {
   margin-left: 80px;
 }
+
 .box-ul #user a {
   color: #000;
   margin-left: 5px;
 }
+
 /* 头部的鼠标划上事件 English 我的12306*/
+
 .wode {
   position: absolute;
   top: 34px;
@@ -436,15 +476,19 @@ export default {
   display: none;
   z-index: 201;
 }
+
 .wode li {
   line-height: 30px;
 }
+
 .wode li a {
   color: #000;
 }
+
 .box-ul .eng:hover ul {
   display: block;
 }
+
 .yi {
   position: absolute;
   top: 34px;
@@ -454,21 +498,28 @@ export default {
   display: none;
   z-index: 101;
 }
+
 .yi li {
   border-bottom: 1px dashed #000;
 }
+
 .yi li a {
   color: #000;
 }
+
 .box-ul .wo:hover ul {
   display: block;
   color: #000;
 }
+
 /* 二级菜单 */
+
+
 .box-list ul {
   width: 1200px;
   height: 40px;
 }
+
 .box-list ul li {
   float: left;
   width: 145px;
@@ -480,11 +531,14 @@ export default {
   cursor: pointer;
   position: relative;
 }
+
 .box-list ul li span {
   margin-left: 5px;
   font-size: 12px;
   font-weight: bold;
 }
+
+
 /*尾部*/
 .qianfeng {
   width: 1200px;
@@ -492,6 +546,7 @@ export default {
   background: #f8f8f8;
   margin: 0 auto;
 }
+
 .box-a {
   padding: 10px 0;
   width: 1200px;
@@ -500,6 +555,7 @@ export default {
   margin-right: auto;
   background: #fff;
 }
+
 .qian-a {
   margin-right: 20px;
   float: left;
@@ -507,37 +563,45 @@ export default {
   margin-left: 60px;
   /* margin-right: 195px; */
 }
+
 .qian-a h2 {
   height: 54px;
   line-height: 54px;
   font-size: 14px;
 }
+
 .qian-a ul {
   height: 100px;
 }
+
 .qian-a ul li {
   float: left;
   margin: 0 10px 10px 0;
 }
+
 .qian-a ul li a img {
   display: block;
   width: 198px;
   height: 34px;
   border: 1px solid #dedede;
 }
+
 .xian {
   float: left;
 }
+
 .xian li {
   float: left;
   width: 140px;
   text-align: center;
 }
+
 .xian li h2 {
   height: 54px;
   line-height: 54px;
   font-size: 14px;
 }
+
 .xian .dimg {
   width: 80px;
   height: 80px;
@@ -545,13 +609,16 @@ export default {
   margin: 0 auto;
   position: relative;
 }
+
 .xian .dimg img {
   display: block;
   width: 80px;
   height: 80px;
   border: 1px solid #dedede;
 }
+
 /* 底部 */
+
 .box-b {
   margin-top: 160px;
   width: 1200px;
@@ -561,15 +628,19 @@ export default {
   background: #666;
   color: #c1c1c1;
 }
+
 .box-b p {
   line-height: 40px;
 }
+
 .box-b p span {
   font-size: 15px;
   color: #999;
   margin-left: 10px;
 }
+
 /* 返回顶端 */
+
 .box-c {
   position: fixed;
   right: 0;
@@ -581,7 +652,9 @@ export default {
   line-height: 60px;
   cursor: pointer;
 }
+
 .box-c span {
   font-size: 35px;
 }
+
 </style>
