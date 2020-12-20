@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-//import HelloWorld from '@/components/HelloWorld'
 import login from '@/components/login'
 import registry from "@/components/registry";
 import forgetPassword from "@/components/forgetPassword";
@@ -14,7 +13,12 @@ import addOrUpdateTrain from "@/components/addOrUpdateTrain";
 import AllPeopleList from "@/components/AllPeopleList";
 import addAddress from "@/components/addAddress";
 import OrderList from "@/components/OrderList";
+import order_frame from "@/components/order_frame";
+import Order from "@/components/MyOrder";
+// import travel from "@/components/travel";
+// import passenger from "../components/passenger";
 Vue.use(Router)
+
 export default new Router({
   routes: [
     {
@@ -84,5 +88,16 @@ export default new Router({
         },
       ]
     },
+    {
+      path: '/order',
+      component: order_frame,
+      redirect: '/order_frame',
+      children: [
+        {
+          path: '/order_frame',
+          component: Order
+        }
+      ]
+    }
   ]
 })
