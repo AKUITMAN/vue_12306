@@ -61,6 +61,7 @@
          }
        };
      },
+
      methods:{
        insertOrUpdate:function () {
         this.ruleForm.userId=this.$cookie.get("token");

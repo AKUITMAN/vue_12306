@@ -2,7 +2,7 @@
   <div class="box">
     <head-top></head-top>
     <video class="vid" autoplay loop muted playsinline preload="auto">
-      <source src="../assets/我的作品1.mp4" type="video/mp4">
+<!--      <source src="../assets/我的作品1.mp4" type="video/mp4">-->
     </video>
 
 

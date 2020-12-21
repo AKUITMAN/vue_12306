@@ -1,7 +1,7 @@
 <template>
 <div class="box">
   <video class="vid" autoplay loop muted playsinline preload="auto">
-    <source src="../assets/我的作品1.mp4" type="video/mp4">
+<!--    <source src="../assets/我的作品1.mp4" type="video/mp4">-->
   </video>
   <div class="title">12306后台管理员登录</div>
   <div class="box1">

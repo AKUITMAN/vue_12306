@@ -47,7 +47,7 @@
                   </li>
                 </ul>
               </li>
-              <li id="user"><a>登录</a><a>注册</a></li>
+              <li id="user"><a id="login">登录</a><a>注册</a></li>
             </ul>
           </div>
         </div>
@@ -113,64 +113,6 @@
       <!-- 左侧导航   -->
       <el-row>
         <el-col :span="18" :offset="3">
-          <!--
-                      <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-                        <el-menu :default-openeds="['3','1','4','5','6']">
-                          <el-submenu index="1">
-                            <template slot="title">
-                              <i class="el-icon-message"></i>订单中心
-                            </template>
-                            <el-menu-item-group>
-                              <el-menu-item index="1-1">火车票订单</el-menu-item>
-                              <el-menu-item index="1-2">候补订单</el-menu-item>
-                              <el-menu-item index="1-3">餐饮<i class="el-icon-minus"></i>特产</el-menu-item>
-                              <el-menu-item index="1-4">保险订单</el-menu-item>
-                            </el-menu-item-group>
-                          </el-submenu>
-                          <el-menu-item @click="btn">本人车票</el-menu-item>
-                          <el-menu-item @click="btn">会员中心</el-menu-item>
-                          <el-submenu index="3">
-                            <template slot="title">
-                              <i class="el-icon-setting"></i>个人信息
-                            </template>
-                            <el-menu-item-group>
-                              <el-menu-item index="3-1">查看个人信息</el-menu-item>
-                              <el-menu-item index="3-2">账号安全</el-menu-item>
-                              <el-menu-item index="3-3">手机核验</el-menu-item>
-                              <el-menu-item index="3-4">账号注销</el-menu-item>
-                            </el-menu-item-group>
-                          </el-submenu>
-                          <el-submenu index="4">
-                            <template slot="title">
-                              <i class="el-icon-setting"></i>常用信息管理
-                            </template>
-                            <el-menu-item-group>
-                              <el-menu-item index="4-1">乘车人</el-menu-item>
-                              <el-menu-item index="4-2">地址管理</el-menu-item>
-                            </el-menu-item-group>
-                          </el-submenu>
-                          <el-submenu index="5">
-                            <template slot="title">
-                              <i class="el-icon-setting"></i>温馨服务
-                            </template>
-                            <el-menu-item-group>
-                              <el-menu-item index="5-1">重点旅客预约</el-menu-item>
-                              <el-menu-item index="5-2">遗失物品查找</el-menu-item>
-                              <el-menu-item index="5-3">服务查询</el-menu-item>
-                            </el-menu-item-group>
-                          </el-submenu>
-                          <el-submenu index="6">
-                            <template slot="title">
-                              <i class="el-icon-setting"></i>投诉和建议
-                            </template>
-                            <el-menu-item-group>
-                              <el-menu-item index="6-1">投诉</el-menu-item>
-                              <el-menu-item index="6-2">建议</el-menu-item>
-                            </el-menu-item-group>
-                          </el-submenu>
-                        </el-menu>
-                      </el-aside>
-          -->
           <el-container style="height: 100%;">
 
           <el-col :span="6">

@@ -14,7 +14,6 @@ import AllPeopleList from "@/components/AllPeopleList";
 import addAddress from "@/components/addAddress";
 import OrderList from "@/components/OrderList";
 import order_frame from "@/components/order_frame";
-// import MyOrder from "@/components/MyOrder";
 import passenger from '@/components/passenger'
 import personal from "@/components/personal";
 import account from "@/components/account";
